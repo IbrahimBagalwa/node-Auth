@@ -76,7 +76,7 @@ select {
 .container {
   padding-inline: 2rem;
   margin-inline: auto;
-  max-width: 80rem;
+  max-width: 200rem;
 }
 
 .sr-only {
@@ -89,4 +89,10 @@ select {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap; /* added line*/
   border: 0;
+}
+
+.box {
+  background: lightblue;
+  padding: 3rem;
+  margin-top: 0.5rem;
 }
