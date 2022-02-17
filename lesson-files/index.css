@@ -258,8 +258,9 @@ select {
 .primary-navigation {
   --gap: 8rem;
   --underline-gap: 2rem;
+  padding-left: 2rem;
   list-style-type: none;
-  padding: 0;
+  /* padding: 0; */
   margin: 0;
   background: hsl(var(--clr-white) / 0.04);
 }
