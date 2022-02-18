@@ -348,6 +348,9 @@ select {
     aspect-ratio: 1;
     border: 0;
   }
+  .primary-navigation[data-visible="true"] {
+    transform: translateX(0);
+  }
 }
 .primary-navigation a {
   text-decoration: none;
