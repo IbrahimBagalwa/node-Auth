@@ -527,6 +527,7 @@ body {
 .grid-container--destination > picture {
   grid-area: image;
   max-width: 60%;
+  align-self: start;
 }
 .grid-container--destination > .tabs-list {
   grid-area: tabs;
@@ -615,8 +616,7 @@ body {
       ". image tabs ."
       ". image content .";
   }
-  .grid-container--destination > picture,
-  .grid-container--crew > picture {
+  .grid-container--destination > picture {
     max-width: 100%;
   }
   .destination-meta {
@@ -624,15 +624,22 @@ body {
     justify-content: start;
   }
   .grid-container--crew {
+    grid-template-columns: minmax(1rem, 1fr) minmax(0, 37rem) minmax(0, 23rem) minmax(
+        1rem,
+        1fr
+      );
+    justify-items: start;
     grid-template-areas:
       ". title title ."
       ". content image ."
       ". dots image .";
   }
-  .grid-container--crew > .dots-indicators {
+  /* .grid-container--crew > .dots-indicators {
     justify-self: start;
-  }
+  } */
   .grid-container--crew > picture {
+    grid-column: span 2;
     align-self: end;
+    max-width: 90%;
   }
 }
