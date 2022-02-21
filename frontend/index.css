@@ -508,6 +508,18 @@ body {
   margin-top: 2.5rem;
   padding-top: 2.5rem;
 }
+
+@media (min-width: 35em) {
+  .numbered-title {
+    justify-self: start;
+    margin-top: 2rem;
+  }
+  .destination-meta {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
 @media (min-width: 45rem) {
   .grid-container {
     text-align: left;
