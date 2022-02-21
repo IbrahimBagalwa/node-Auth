@@ -473,7 +473,7 @@ body {
   padding-inline: 1rem;
   padding-bottom: 3rem;
 }
-.grid-container * {
+.grid-container p:not([class]) {
   max-width: 50ch;
 }
 
@@ -554,7 +554,7 @@ body {
     max-width: 100%;
   }
   .destination-meta {
-    --gap: 6rem;
+    --gap: min(6vw, 6rem);
     justify-content: start;
   }
 }
