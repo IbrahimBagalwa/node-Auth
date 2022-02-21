@@ -13,6 +13,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="./index.css">
     <script src="./index.js" defer></script>
+    <script src="./tabs.js" defer></script>
     <title>Space-Tourism</title>
 </head>
 <body class="crew">
@@ -37,13 +38,14 @@
         </header>
         <main id="crew" class="grid-container grid-container--crew flow">
             <h1 class="numbered-title"><span aria-hidden="true">02</span> Meet your crew</h1>
-            <div class="dots-indicators flex">
-                <button aria-selected="true"><span class="sr-only"> The commender</span></button>
-                <button aria-selected="false"><span class="sr-only"> The mission spacialist</span></button>
-                <button aria-selected="false"><span class="sr-only"> The pilot</span></button>
-                <button aria-selected="false"><span class="sr-only"> The crew engineer</span></button>
+            <div class="dots-indicators flex" role="tablist" aria-label="crew member list">
+                <button aria-selected="true" role="tab" data-image="commander-image" tabindex="0" aria-controls="commander-tab"><span class="sr-only"> The commender</span></button>
+                <button aria-selected="false" role="tab" data-image="mission-image" tabindex="-1" aria-controls="mission-tab"><span class="sr-only"> The mission spacialist</span></button>
+                <button aria-selected="false" role="tab" data-image="pilot-image" tabindex="-1" aria-controls="pilot-tab"><span class="sr-only"> The pilot</span></button>
+                <button aria-selected="false" role="tab" data-image="engineer-image" tabindex="-1" aria-controls="engineer-tab"><span class="sr-only"> The crew engineer</span></button>
             </div>
-            <article class="crew-details">
+            <!-- commander -->
+            <article class="crew-details" id="commander-tab" role="tabpanel" tabindex="0">
                 <header class="flow flow--space-small">
                     <h2 class="fs-600 ff-serif uppercase">Commander</h2>
                     <p class="fs-700 uppercase ff-serif">Douglas Hurley</p>
@@ -51,9 +53,49 @@
                 <p>Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched
                 into space for the third time as commander of Crew Dragon Demo-2.</p>
             </article>
-            <picture>
+            <!-- mission-spacial -->
+            <article class="crew-details" hidden id="mission-tab" role="tabpanel" tabindex="0">
+                <header class="flow flow--space-small">
+                    <h2 class="fs-600 ff-serif uppercase">Mission Specialist</h2>
+                    <p class="fs-700 uppercase ff-serif">Mark Shuttleworth</p>
+                </header>
+                <p>Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating
+                system. Shuttleworth became the first South African to travel to space as a space tourist.</p>
+            </article>
+            <!-- pilot -->
+            <article class="crew-details" hidden id="pilot-tab" role="tabpanel" tabindex="0">
+                <header class="flow flow--space-small">
+                    <h2 class="fs-600 ff-serif uppercase">Pilot</h2>
+                    <p class="fs-700 uppercase ff-serif">Victor Glover</p>
+                </header>
+                <p>Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a
+                commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station
+                systems flight engineer.</p>
+            </article>
+            <!-- engineer -->
+            <article class="crew-details" hidden id="engineer-tab" role="tabpanel" tabindex="0">
+                <header class="flow flow--space-small">
+                    <h2 class="fs-600 ff-serif uppercase">Flight Engineer</h2>
+                    <p class="fs-700 uppercase ff-serif">Anousheh Ansari</p>
+                </header>
+                <p>Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded
+                space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space.</p>
+            </article>
+            <picture id="commander-image">
                 <source srcset="./assets/crew/image-douglas-hurley.webp">
                 <img src="./assets/crew/image-douglas-hurley.png" alt="douglas Hurley">
+            </picture>
+            <picture hidden id="mission-image">
+                <source srcset="./assets/crew/image-mark-shuttleworth.webp">
+                <img src="./assets/crew/image-mark-shuttleworth.png" alt="mark Shuttleworth">
+            </picture>
+            <picture hidden id="pilot-image">
+                <source srcset="./assets/crew/image-victor-glover.webp">
+                <img src="./assets/crew/image-victor-glover.png" alt="Victor Glover">
+            </picture>
+            <picture hidden id="engineer-image">
+                <source srcset="./assets/crew/image-anousheh-ansari.webp">
+                <img src="./assets/crew/image-anousheh-ansari.png" alt="Anousheh Ansari">
             </picture>
         </main>
 </body>
