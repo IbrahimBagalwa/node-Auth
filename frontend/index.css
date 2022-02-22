@@ -95,7 +95,6 @@ body {
 img,
 picture {
   max-width: 100%;
-  /* display: block; */
 }
 
 /* make forms elements easier to work with */
@@ -145,7 +144,7 @@ select {
 .container {
   padding-inline: 2rem;
   margin-inline: auto;
-  max-width: 90rem;
+  max-width: 60rem;
 }
 
 .sr-only {
@@ -495,6 +494,23 @@ body {
     background-image: url("./assets/crew/background-crew-desktop.jpg");
   }
 }
+.technology {
+  background-image: url("./assets/technology/background-technology-mobile.jpg");
+}
+
+@media (min-width: 35rem) {
+  .technology {
+    background-position: center center;
+    background-image: url("./assets/technology/background-technology-tablet.jpg");
+  }
+}
+
+@media (min-width: 45rem) {
+  .technology {
+    background-position: top;
+    background-image: url("./assets/technology/background-technology-desktop.jpg");
+  }
+}
 /*                       */
 /* layout               */
 /* --------------------*/
@@ -504,7 +520,7 @@ body {
   display: grid;
   place-items: center;
   padding-inline: 1rem;
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
 }
 .grid-container p:not([class]) {
   max-width: 50ch;
@@ -570,6 +586,37 @@ body {
 .crew-details h2 {
   opacity: 0.5;
 }
+/*                       */
+/* technology layout    */
+/* --------------------*/
+.grid-container--technology {
+  --flow-space: 2rem;
+  grid-template-areas:
+    "title"
+    "image"
+    "numbers"
+    "content";
+}
+.grid-container--technology > picture {
+  grid-area: image;
+}
+.grid-container--technology > .number-indicators {
+  grid-area: numbers;
+  grid-auto-flow: column;
+}
+.grid-container--technology > .technology-info {
+  grid-area: content;
+}
+.technology-info header h2 {
+  color: hsl(var(--clr-white) / 0.5);
+}
+.image-landscape {
+  display: block;
+}
+.image-portrait {
+  display: none;
+}
+
 @media (min-width: 35em) {
   .numbered-title {
     justify-self: start;
@@ -587,6 +634,29 @@ body {
       "dots"
       "image";
   }
+  .grid-container--main {
+    text-align: center;
+  }
+  .grid-container--technology {
+    grid-template-areas:
+      "title"
+      "image"
+      "numbers"
+      "content";
+  }
+  .grid-container--technology > .number-indicators {
+    grid-area: numbers;
+    grid-auto-flow: column;
+  }
+  .grid-container--main > p:not([class]) {
+    width: auto;
+  }
+  .image-landscape {
+    display: block;
+  }
+  .image-portrait {
+    display: none;
+  }
 }
 
 @media (min-width: 45em) {
@@ -597,6 +667,10 @@ body {
         1rem,
         1fr
       );
+  }
+  .grid-container--main {
+    text-align: left;
+    column-gap: var(--container-gap, 3.8rem);
   }
   .grid-container--home {
     padding-bottom: max(6rem, 20vh);
@@ -642,4 +716,23 @@ body {
     align-self: end;
     max-width: 90%;
   }
+  .grid-container--technology > .number-indicators {
+    grid-area: numbers;
+    grid-auto-flow: row;
+  }
+  .grid-container--technology {
+    grid-template-areas:
+      ". title title ."
+      ". numbers content image";
+  }
+  .grid-container--main > p:not([class]) {
+    max-width: 50ch;
+  }
+  .image-landscape {
+    display: none;
+  }
+  .image-portrait {
+    display: block;
+  }
 }
+/* https://github.com/realabdullah/space-tourism/blob/main/index.css */
