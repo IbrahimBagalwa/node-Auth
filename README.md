@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Space Tourism](#)
+- Live Site URL: [Space Tourism](https://ibrahimbagalwa.github.io/space-tourism/)
 
 ## My process
 
