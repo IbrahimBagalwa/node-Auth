@@ -259,7 +259,7 @@ select {
   font-size: 2rem;
   position: relative;
   display: inline-grid;
-  place-items: center;
+  place-items: center; /*egal to align-items and justify-items the first value is for align and second is to justify*/
   padding: 0 2em;
   border-radius: 50%;
   aspect-ratio: 1;
@@ -298,7 +298,9 @@ select {
   padding: 0;
   margin: 0;
   background: hsl(var(--clr-white) / 0.05);
-  backdrop-filter: blur(1.5rem);
+  backdrop-filter: blur(
+    1.5rem
+  ); /* permet d'obtenir un effet de flou ou de diffusion de la couleur sur la zone derrière l'élément*/
 }
 .primary-navigation a {
   text-decoration: none;

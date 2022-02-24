@@ -1,22 +1,47 @@
+:root {
+  --clr-dark: 230 35% 7%;
+  --clr-light: 231 77% 90%;
+}
 .container {
-  font-size: 60px;
-  /* min-height: 600px; */
+  font-size: 2rem;
+  min-height: 300px;
+  position: relative;
   width: 100%;
   background: lightgray;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px auto 1fr auto;
   column-gap: 20px;
   row-gap: 10px;
-  grid-template-areas:
-    "header header header"
-    "advert content content"
-    "footer footer footer";
+  grid-template-areas: "header" "advert" "content" "footer";
+}
+
+@media (min-width: 35em) {
+  .container {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "advert header"
+      "advert content"
+      "advert footer";
+  }
+}
+@media (min-width: 45em) {
+  .container {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "header header"
+      "advert content"
+      "footer footer";
+  }
 }
 
 .d1 {
   background: lightskyblue;
   grid-area: header;
+  padding-inline: 2rem;
+  text-align: center;
 }
 .d2 {
   background: lightsalmon;
@@ -25,20 +50,49 @@
 .d3 {
   background: paleturquoise;
   grid-area: content;
+  text-align: center;
+  padding: 4rem;
 }
-.d4 {
+/* .d4 {
   background: lightpink;
   grid-area: content;
-}
+} */
 .d5 {
   background: palegreen;
   grid-area: footer;
+}
+.flex-container {
+  margin-top: 20px;
+  border: 2px solid gray;
+  /* width: 225px; */
+  padding: 20px;
+  display: flex;
+  /* flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap; */
+}
+.f1,
+.f2,
+.f3 {
+  background: hsl(var(--clr-light));
+  border: 1px solid blue;
+  padding: 20px;
+  margin: 20px;
+  width: 100%;
+  height: 200px;
+}
+.f1 {
+  flex-shrink: 1;
+  writing-mode: vertical-rl;
+}
+.f2 {
+  flex-shrink: 4;
 }
 /* 
 ---put this proprities in parent container----
 grid-template-columns
 grid-template-rows
-gap
+gap or column-gap , row-gap : space betewn to grid
 align-items
 justify-items : définit la valeur par défaut de justify-self pour tous les éléments d'une boîte et permet ainsi de définir le comportement par défaut pour la justification des éléments d'une boîte le long de l'axe en ligne (c'est-à-dire l'axe correspondant au sens d'écriture).
 

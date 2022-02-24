@@ -128,7 +128,7 @@ select {
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  clip: rect(0, 0, 0, 0); /* this propritie is obsolete*/
   white-space: nowrap; /* added line*/
   border: 0;
 }
