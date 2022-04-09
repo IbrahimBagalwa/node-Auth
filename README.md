@@ -12,7 +12,7 @@ This is a solution to the [Space tourism website challenge on Frontend Mentor](h
 - [My process](#my-process)
 - [Built with](#built-with)
 - [Author](#author)
-- [Contact Us](#contact-us)
+- [Contact Us](#connect-us)
 
 ## The challenge
 
